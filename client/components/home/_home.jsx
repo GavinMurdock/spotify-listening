@@ -53,7 +53,7 @@ export const Home = () => {
 
   return (
     <div className="app-container">
-      <div className="header">Spotify Stats</div>
+      <div className="header">Spotify Snaps</div>
       <div className="sub-header">Create and view snapshots of your top 10 songs on Spotify from the last month</div>
       <div className="group">
         <button className="home-buttons" onClick={getSpotifyToken}>
