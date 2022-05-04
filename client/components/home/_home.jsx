@@ -30,7 +30,7 @@ export const Home = () => {
 
   const getSpotifyToken = () => {
     const client_id = '3bcd6f51b2504ce79b775110f473e973';
-    const redirect_uri = 'http://localhost:3000/';
+    const redirect_uri = 'https://spotify-snaps.herokuapp.com/#/';
     const scope = 'user-top-read';
     var url = 'https://accounts.spotify.com/authorize';
     url += '?response_type=token';
