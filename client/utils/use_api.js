@@ -21,7 +21,11 @@ export class Api {
         'Content-Type': 'application/json',
       },
       ...options,
-    }).then((res) => res.json());
+    })
+      .then((res) => res.json())
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   get(url) {

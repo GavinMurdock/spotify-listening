@@ -12,7 +12,7 @@ export const useJwtRefresh = (authToken, setAuthToken) => {
         } else {
           setAuthToken(null);
         }
-      }, 60000 * 10); // 10 minutes
+      }, 60000 * 20);
     }
     return () => clearTimeout(refreshTimer.current);
   }, [authToken]);

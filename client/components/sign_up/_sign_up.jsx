@@ -1,15 +1,13 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router';
 import { AuthContext } from '../../utils/auth_context';
 import { ApiContext } from '../../utils/api_context';
 import { Paper } from '../common/paper';
 import { Input } from '../common/input';
-import { Button } from '../common/button';
+import { Link } from 'react-router-dom';
 
 export const SignUp = () => {
   const [, setAuthToken] = useContext(AuthContext);
   const api = useContext(ApiContext);
-  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -50,13 +48,12 @@ export const SignUp = () => {
       email,
       password,
     });
-    setAuthToken(token);
-    navigate('/');
+    await setAuthToken(token);
   };
 
   return (
     <div className="flex flex-row justify-center m-4">
-      <div className="w-96">
+      <div className="login">
         <Paper>
           <div>First Name</div>
           <Input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
@@ -75,9 +72,11 @@ export const SignUp = () => {
             onChange={(e) => setPasswordConfirmation(e.target.value)}
           />
           <div className="flex flex-row justify-end mt-2">
-            <Button type="button" onClick={signUp}>
-              Sign up
-            </Button>
+            <Link to={'/'}>
+              <button className="login-button" onClick={signUp}>
+                Sign up
+              </button>
+            </Link>
           </div>
           <div className="flex">{errorMessage}</div>
         </Paper>
