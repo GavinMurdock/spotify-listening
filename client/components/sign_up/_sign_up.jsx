@@ -52,7 +52,9 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="flex flex-row justify-center m-4">
+    <div className="login-page">
+      <div className="header">Welcome to Spotify Snaps!</div>
+      <div className="sub-header">Sign up to continue</div>
       <div className="login">
         <Paper>
           <div>First Name</div>
